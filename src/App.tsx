@@ -1,7 +1,7 @@
-import { greet } from "./utils/greet";
+import NumberPicker from "./components/NumberPicker";
 
 function App(): JSX.Element {
-  return <h1>{greet("World")}</h1>;
+  return <NumberPicker />;
 }
 
 export default App;
