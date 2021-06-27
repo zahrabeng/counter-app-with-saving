@@ -1,12 +1,14 @@
 import { useState } from "react";
 
 export default function NumberPicker(): JSX.Element {
-  const [counterValueFromCurrentRender, queueRerenderWithNewCounterValue] = useState(0);
-  const [favouriteValueFromCurrentRender, queueRerenderWithNewFavouriteValue] = useState(0);
+  const [counterValueFromCurrentRender, queueRerenderWithNewCounterValue] =
+    useState(0);
+  const [favouriteValueFromCurrentRender, queueRerenderWithNewFavouriteValue] =
+    useState(0);
 
   const handleAddOneToCounter = () => {
     queueRerenderWithNewCounterValue(counterValueFromCurrentRender + 1);
-  }
+  };
 
   const handleSubtractOneFromCounter = () => {
     queueRerenderWithNewCounterValue(counterValueFromCurrentRender - 1);
@@ -14,7 +16,7 @@ export default function NumberPicker(): JSX.Element {
 
   const handleStoreCurrentCount = () => {
     queueRerenderWithNewFavouriteValue(counterValueFromCurrentRender);
-  }
+  };
 
   return (
     <>
@@ -26,5 +28,5 @@ export default function NumberPicker(): JSX.Element {
       <hr />
       <button onClick={handleStoreCurrentCount}>Store current count</button>
     </>
-  )
+  );
 }
