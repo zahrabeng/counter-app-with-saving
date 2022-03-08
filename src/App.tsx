@@ -4,8 +4,8 @@ import EmojiPicker from "./components/EmojiPicker";
 function App(): JSX.Element {
   return (
     <>
-        <NumberPicker />;
-        <EmojiPicker />
+      <NumberPicker />;
+      <EmojiPicker />
     </>
   );
 }
