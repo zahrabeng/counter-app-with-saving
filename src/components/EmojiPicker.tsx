@@ -25,6 +25,11 @@ export default function EmojiPicker (): JSX.Element{
         queRenderWithStoredValue(emojiValueFromCurrentRender)
         queRenderWithEmojiValue("😋")
     }
+
+    const HandleRenderBedEmoji = () => {
+        queRenderWithStoredValue(emojiValueFromCurrentRender)
+        queRenderWithEmojiValue("🛌")
+    }
     
 return (
      <div>
@@ -36,6 +41,7 @@ return (
         <button onClick={HandleRenderPanEmoji}>🍳</button>
         <button onClick={HandleRenderPlateEmoji}>🍽️</button>
         <button onClick={HandleRenderSmileEmoji}>😋</button>
+        <button onClick={HandleRenderBedEmoji}>🛌</button>
     </div>
     )
 }
