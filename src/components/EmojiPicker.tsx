@@ -2,37 +2,37 @@ import { useState } from "react";
 
 export default function EmojiPicker(): JSX.Element {
   const [emojiValueFromCurrentRender, queRenderWithEmojiValue] = useState("");
-  const [storedValueFromCurrentRender, queRenderWithStoredValue] = useState("");
+  const [storedValueFromCurrentRender, queRenderWithStoredValue] = useState<string[]>([""]);
 
   const HandleRenderClockEmoji = () => {
-    queRenderWithStoredValue(emojiValueFromCurrentRender);
+    queRenderWithStoredValue([...storedValueFromCurrentRender, emojiValueFromCurrentRender, ]);
     queRenderWithEmojiValue("⏰");
   };
 
   const HandleRenderPanEmoji = () => {
-    queRenderWithStoredValue(emojiValueFromCurrentRender);
+    queRenderWithStoredValue([...storedValueFromCurrentRender, emojiValueFromCurrentRender]);
     queRenderWithEmojiValue("🍳");
   };
 
   const HandleRenderPlateEmoji = () => {
-    queRenderWithStoredValue(emojiValueFromCurrentRender);
+    queRenderWithStoredValue([...storedValueFromCurrentRender, emojiValueFromCurrentRender]);
     queRenderWithEmojiValue("🍽️");
   };
 
   const HandleRenderSmileEmoji = () => {
-    queRenderWithStoredValue(emojiValueFromCurrentRender);
+    queRenderWithStoredValue([...storedValueFromCurrentRender, emojiValueFromCurrentRender]);
     queRenderWithEmojiValue("😋");
   };
 
   const HandleRenderBedEmoji = () => {
-    queRenderWithStoredValue(emojiValueFromCurrentRender);
+    queRenderWithStoredValue([...storedValueFromCurrentRender, emojiValueFromCurrentRender]);
     queRenderWithEmojiValue("🛌");
   };
 
   return (
     <div>
       <h1>Emoji Picker</h1>
-      <p>Your old emoji: {storedValueFromCurrentRender} </p>
+      <p>Your old emojis are: {storedValueFromCurrentRender.join(", ")} </p>
       <p>Your current emoji: {emojiValueFromCurrentRender}</p>
 
       <button onClick={HandleRenderClockEmoji}>⏰</button>
