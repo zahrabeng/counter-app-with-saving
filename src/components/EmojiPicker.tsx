@@ -2,7 +2,7 @@ import { useState } from "react";
 
 export default function EmojiPicker(): JSX.Element {
   const [emojiValueFromCurrentRender, queRenderWithEmojiValue] = useState("");
-  const [storedValueFromCurrentRender, queRenderWithStoredValue] = useState<string[]>([""]);
+  const [storedValueFromCurrentRender, queRenderWithStoredValue] = useState<string[]>([]);
 
   const HandleRenderClockEmoji = () => {
     queRenderWithStoredValue([...storedValueFromCurrentRender, emojiValueFromCurrentRender, ]);
@@ -29,10 +29,18 @@ export default function EmojiPicker(): JSX.Element {
     queRenderWithEmojiValue("🛌");
   };
 
+//mapping function for list
+const emojiArray = storedValueFromCurrentRender.map((emoji) =>
+<><li>
+    {emoji}
+</li>
+</>
+)
+
   return (
     <div>
       <h1>Emoji Picker</h1>
-      <p>Your old emojis are: {storedValueFromCurrentRender.join(", ")} </p>
+      <p>Your old emojis are: {emojiArray} </p>
       <p>Your current emoji: {emojiValueFromCurrentRender}</p>
 
       <button onClick={HandleRenderClockEmoji}>⏰</button>
@@ -43,3 +51,5 @@ export default function EmojiPicker(): JSX.Element {
     </div>
   );
 }
+
+//storedValueFromCurrentRender.join(", ")
